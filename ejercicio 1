@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+using namespace std;
+void registrarCadena (string &subcadena, string  &cadena);
+void mostrarCadena (string &subcadena, string &cadena);
+int BuscarCadena (string a, string b);
+int main(){
+    string a, b;
+    registrarCadena(a, b);
+    mostrarCadena(a, b);
+    return 0;
+}
+void registrarCadena (string &subcadena, string  &cadena){
+    cout<<"ingresa el texto principal" ;
+    cin>> cadena;
+    cout<< "ingresa la subcadena";
+    cin>> subcadena;
+}
+int BuscarSubCadena(string a, string b) {
+
+    size_t posicion = b.find(a);
+
+    if (posicion != string::npos) {
+        return posicion;
+    } else {
+        return -1;
+    }
+}
+void mostrarCadena(string &subcadena, string &cadena){
+int posicion = BuscarSubCadena(subcadena, cadena);
+
+    cout << "\nCadena principal: " << cadena << endl;
+    cout << "Subcadena buscada: " << subcadena << endl;
+    cout << "Posicion encontrada: " << posicion << endl;
+}
